@@ -12,12 +12,13 @@ class BuildController < ApplicationController
   end
 
   def generate_document
-    WorkflowDriver.workflows_for(params[:question_data])
-    html =<<-HTML
-      <html>
-      SOME SHIT
-      </html>
-    HTML
+    matching_workflows = WorkflowDriver.workflows_for(params[:answer_data])
+    html = "<html>"
+    html << "We've determined that you're using the following workflows:"
+    html << matching_workflows.map {|workflow| <<-TEXT }.join("<br/>")
+      <h1>#{workflow.code} - #{workflow.description}<h1>
+    TEXT
+    html << "</html>"
 
     kit = PDFKit.new(html, :page_size => 'Letter')
     pdf = kit.to_pdf
