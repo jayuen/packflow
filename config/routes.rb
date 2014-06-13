@@ -1,5 +1,5 @@
 Packflow::Application.routes.draw do
-  root :to => 'build#index'
+  root :to => 'home#index'
 
   resources :configs do
     collection do
@@ -9,6 +9,8 @@ Packflow::Application.routes.draw do
       post :add_new_setting_driver
     end
   end
+
+  get 'build' => 'build#index'
 
   get 'build/generate_document' => 'build#generate_document'
   # The priority is based upon order of creation:
