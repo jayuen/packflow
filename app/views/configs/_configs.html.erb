@@ -32,10 +32,10 @@
       <th>Question</th>
       <th>Answer</th>
     </tr>
-    <tr ng-repeat="workflow_driver in ctrl.workflow_drivers">
-      <td>{{ctrl.getWorkflowFromDriver(workflow_driver).description}}</td>
-      <td>{{ctrl.getQuestionFromDriver(workflow_driver).title}}</td>
-      <td>{{workflow_driver.answer}}</td>
+    <tr ng-repeat="workflowDriver in ctrl.workflowDrivers">
+      <td>{{ctrl.getWorkflowFromDriver(workflowDriver).description}}</td>
+      <td>{{ctrl.getQuestionFromDriver(workflowDriver).title}}</td>
+      <td>{{workflowDriver.answer}}</td>
     </tr>
   </table>
 </div>

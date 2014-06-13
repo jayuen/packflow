@@ -11,4 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require angular
+//= require underscore-1.6.0
 //= require_tree .
