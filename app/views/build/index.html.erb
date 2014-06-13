@@ -1,0 +1,17 @@
+<html ng-app="build">
+  <script>
+    var BuildData = <%= @data.to_json.html_safe %>
+  </script>
+  <h1>Building a receiving workflow</h1>
+  <div ng-controller='BuildCtrl'>
+    <table>
+      <tr ng-repeat="question in questions">
+        <td>{{question.code}}</td>
+        <td>{{question.title}}</td>
+        <td><select ng-model="question.answer"><option value='Y'>Y</option><option value='N'>N</option></select>
+      </tr>
+    </table>
+    <a href="/build/workflow_document"><button>Build workflow</button></a>
+    </div>
+  </div>
+</html>
