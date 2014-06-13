@@ -6,6 +6,7 @@ Packflow::Application.routes.draw do
       post :add_new_workflow
       post :add_new_question
       post :add_new_workflow_driver
+      post :add_new_setting_driver
     end
   end
 
