@@ -57,11 +57,36 @@
       <th>Workflow</th>
       <th>Question</th>
       <th>Answer</th>
+      <th></th>
     </tr>
     <tr ng-repeat="workflowDriver in ctrl.workflowDrivers">
       <td>{{ctrl.getWorkflowFromDriver(workflowDriver).description}}</td>
       <td>{{ctrl.getQuestionFromDriver(workflowDriver).title}}</td>
       <td>{{workflowDriver.answer}}</td>
+    </tr>
+
+    <tr>
+      <td>
+        <select ng-model="ctrl.newWorkflowDriver.workflow_id"
+          ng-options="workflow.id as workflow.description for workflow in ctrl.workflows"
+        >
+        </select>
+      </td>
+      <td>
+        <select ng-model="ctrl.newWorkflowDriver.question_id"
+          ng-options="question.id as question.title for question in ctrl.questions"
+        >
+        </select>
+      </td>
+      <td>
+        <select ng-model="ctrl.newWorkflowDriver.answer">
+          <option value="Y">Y</option>
+          <option value="N">N</option>
+        </select>
+      </td>
+      <td>
+        <button ng-click="ctrl.addNewWorkflowDriver()">Add new workflow driver</button>
+      </td>
     </tr>
   </table>
 </div>
