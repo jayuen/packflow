@@ -17,12 +17,12 @@ class WorkflowDriver < ActiveRecord::Base
     workflows.each do |workflow|
       match = true
       workflow.drivers.each do |driver|
-        answers.each do |answer|
-          if driver.question == answer.question
-            if driver.answer != answer.value
-              match = false
-            end
-          end
+        question = driver.question
+        answer = answers.find {|a| a.question == question}
+        if answer.present?
+          match = false if answer.value != driver.answer
+        else
+          match = false
         end
       end
 

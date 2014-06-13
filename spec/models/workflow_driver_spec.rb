@@ -55,5 +55,17 @@ describe WorkflowDriver do
 
       expect(matches.size).to eq(0)
     end
+
+    it "matches multiple workflows" do
+      another_question = Question.new 
+      another_driver = WorkflowDriver.new question: another_question, answer: 'Y'
+      another_workflow = Workflow.new
+      another_workflow.drivers << another_driver
+      another_answer = Answer.new another_question, 'Y'
+
+      matches = WorkflowDriver.find_matching_workflows [answer, another_answer], [another_workflow, workflow]
+
+      expect(matches.size).to eq(2)
+    end
   end
 end
