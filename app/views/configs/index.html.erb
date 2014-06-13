@@ -1,1 +1,13 @@
-HELLO
+<div id="configs">
+  <div ng-include="'configs.html'"></div>
+</div>
+
+<%= render partial: "configs" %>
+
+<script>
+  bootstrap(angular.module('configsApp'));
+
+  function bootstrap(configsApp) {
+    angular.bootstrap(document.getElementById('configs'), [configsApp.name]);
+  }
+</script>
