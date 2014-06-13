@@ -89,5 +89,50 @@
       </td>
     </tr>
   </table>
+
+  <h2>Setting Drivers</h2>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Setting type</th>
+      <th>Question</th>
+      <th>Answer</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="settingDriver in ctrl.settingDrivers">
+      <td>{{settingDriver.setting}}</td>
+      <td>{{settingDriver.type}}</td>
+      <td>{{ctrl.getQuestionFromDriver(settingDriver).title}}</td>
+      <td>{{ctrl.getQuestionFromDriver(settingDriver).answer}}</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>
+        <input ng-model="ctrl.newSettingDriver.setting"></input>
+      </td>
+      <td>
+        <select ng-model="ctrl.newSettingDriver.answer">
+          <option value="site">Site</option>
+          <option value="account">Account</option>
+        </select>
+      </td>
+      <td>
+        <select ng-model="ctrl.newSettingDriver.question_id"
+          ng-options="question.id as question.title for question in ctrl.questions"
+        >
+        </select>
+      </td>
+      <td>
+        <select ng-model="ctrl.newSettingDriver.answer">
+          <option value="Y">Y</option>
+          <option value="N">N</option>
+        </select>
+      </td>
+      <td>
+        <button ng-click="ctrl.addNewSettingDriver()">Add new setting driver</button>
+      </td>
+    </tr>
+  </table>
 </div>
 </script>
