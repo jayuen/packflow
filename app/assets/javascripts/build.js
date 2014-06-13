@@ -1,18 +1,6 @@
 var buildApp = angular.module('build', []);
 
-buildApp.factory('documentGenerator', function($http) {
-  return {
-    build: function(questionsWithAnswers) {
-      $http({method: 'GET', url: '/build/workflow_document'})
-    }
-  }
-})
-
-buildApp.controller('BuildCtrl', ['$scope', 'documentGenerator', function($scope, documentGenerator) {
+buildApp.controller('BuildCtrl', ['$scope', function($scope) {
   $scope.questions = BuildData.questions
-
-  $scope.submit = function(){
-    documentGenerator.build($scope.questions)
-  }
 }]);
 

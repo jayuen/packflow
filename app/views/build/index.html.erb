@@ -4,15 +4,16 @@
   </script>
   <h1>Building a receiving workflow</h1>
   <div ng-controller='BuildCtrl'>
-    <table>
-      <tr ng-repeat="question in questions">
-        <td>{{question.code}}</td>
-        <td>{{question.title}}</td>
-        <td><select ng-model="question.answer"><option value='Y'>Y</option><option value='N'>N</option></select>
-      </tr>
-    </table>
-    <button ng-click="submit()">Generate document</button>
-    <form action="/build/generate_document">
+    <form action='/build/generate_document'>
+      <table>
+        <tr ng-repeat="question in questions">
+          <td>{{question.code}}</td>
+          <td>{{question.title}}</td>
+          <td><select ng-model="question.answer"><option value='Y'>Y</option><option value='N'>N</option></select>
+          <td><input type='hidden' name="question_data[{{question.code}}]" value={{question.answer}}></input></td>
+        </tr>
+      </table>
+      <button type="submit">Generate document</button>
     </form>
     <a href="/build/generate_document"><button>Generate document (old)</button></a>
     </div>
