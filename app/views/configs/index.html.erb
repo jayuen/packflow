@@ -8,6 +8,12 @@
   bootstrap(angular.module('configsApp'));
 
   function bootstrap(configsApp) {
+    configsApp.value("initialData", {
+      workflows: <%= @workflows.html_safe %>,
+      questions: <%= @questions.html_safe %>,
+      workflow_drivers: <%= @workflow_drivers.html_safe %>
+    });
+
     angular.bootstrap(document.getElementById('configs'), [configsApp.name]);
   }
 </script>
