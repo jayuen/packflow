@@ -12,6 +12,7 @@ class BuildController < ApplicationController
   end
 
   def generate_document
+    WorkflowDriver.workflows_for(params[:question_data])
     html =<<-HTML
       <html>
       SOME SHIT
