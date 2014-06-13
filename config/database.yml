@@ -9,3 +9,10 @@ development:
   username: nulogy
   password: Nulogy4Ever
   host: localhost
+
+test:
+  adapter: postgresql
+  database: packflow_test
+  username: nulogy
+  password: Nulogy4Ever
+  host: localhost
