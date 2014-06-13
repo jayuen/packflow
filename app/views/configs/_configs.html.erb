@@ -1,4 +1,42 @@
 <script type="text/ng-template" id="configs.html">
+<h1>The One and Only configuration page</h1>
 <div ng-controller="ConfigsCtrl as ctrl">
+  <h2>Workflows</h2>
+  <table>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+    </tr>
+    <tr ng-repeat="workflow in ctrl.workflows">
+      <td>{{workflow.code}}</td>
+      <td>{{workflow.description}}</td>
+    </tr>
+  </table>
+
+  <h2>Questions</h2>
+  <table>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+    </tr>
+    <tr ng-repeat="question in ctrl.questions">
+      <td>{{question.code}}</td>
+      <td>{{question.title}}</td>
+    </tr>
+  </table>
+
+  <h2>Workflow Drivers</h2>
+  <table>
+    <tr>
+      <th>Workflow</th>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+    <tr ng-repeat="workflow_driver in ctrl.workflow_drivers">
+      <td>{{ctrl.getWorkflowFromDriver(workflow_driver).description}}</td>
+      <td>{{ctrl.getQuestionFromDriver(workflow_driver).title}}</td>
+      <td>{{workflow_driver.answer}}</td>
+    </tr>
+  </table>
 </div>
 </script>
