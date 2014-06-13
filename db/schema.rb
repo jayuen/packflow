@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20140613031957) do
   create_table "workflows", :force => true do |t|
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "code"
     t.text     "description"
   end
 
