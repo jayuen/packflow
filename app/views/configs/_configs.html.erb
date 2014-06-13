@@ -6,10 +6,23 @@
     <tr>
       <th>Code</th>
       <th>Description</th>
+      <th></th>
     </tr>
     <tr ng-repeat="workflow in ctrl.workflows">
       <td>{{workflow.code}}</td>
       <td>{{workflow.description}}</td>
+    </tr>
+
+    <tr>
+      <td>
+        <input ng-model="ctrl.newWorkflow.code"></input>
+      </td>
+      <td>
+        <input ng-model="ctrl.newWorkflow.description"></input>
+      </td>
+      <td>
+        <button ng-click="ctrl.addNewWorkflow()">Add new workflow</button>
+      </td>
     </tr>
   </table>
 
