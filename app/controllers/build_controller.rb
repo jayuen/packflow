@@ -11,7 +11,7 @@ class BuildController < ApplicationController
     } 
   end
 
-  def workflow_document
+  def generate_document
     html =<<-HTML
       <html>
       SOME SHIT

@@ -18,6 +18,5 @@ module TestData
 
     WorkflowDriver.create! workflow: workflow_b, answer: 'N', question: question_1 
     WorkflowDriver.create! workflow: workflow_b, answer: 'Y', question: question_2 
-
   end
 end

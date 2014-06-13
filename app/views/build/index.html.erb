@@ -11,7 +11,10 @@
         <td><select ng-model="question.answer"><option value='Y'>Y</option><option value='N'>N</option></select>
       </tr>
     </table>
-    <a href="/build/workflow_document"><button>Build workflow</button></a>
+    <button ng-click="submit()">Generate document</button>
+    <form action="/build/generate_document">
+    </form>
+    <a href="/build/generate_document"><button>Generate document (old)</button></a>
     </div>
   </div>
 </html>
