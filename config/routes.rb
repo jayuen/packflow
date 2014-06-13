@@ -1,6 +1,8 @@
 Packflow::Application.routes.draw do
   root :to => 'build#index'
 
+  resources :configs
+
   get 'build/generate_document' => 'build#generate_document'
   # The priority is based upon order of creation:
   # first created -> highest priority.
