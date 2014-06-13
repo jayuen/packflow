@@ -14,12 +14,14 @@ class WorkflowDriver < ActiveRecord::Base
 
   def self.find_matching_workflows answers, workflows
     matches = []
-    match = true
     workflows.each do |workflow|
+      match = true
       workflow.drivers.each do |driver|
         answers.each do |answer|
-          if driver.answer != answer.value || driver.question != answer.question
-            match = false
+          if driver.question == answer.question
+            if driver.answer != answer.value
+              match = false
+            end
           end
         end
       end
