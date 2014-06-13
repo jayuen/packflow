@@ -5,6 +5,7 @@ var ConfigsCtrl = function($http, initialData) {
   this.questions = initialData.questions;
   this.workflowDrivers = initialData.workflow_drivers;
   this.newWorkflow = {};
+  this.newQuestion = {};
 
   this.getWorkflowFromDriver = function(driver) {
     return _.findWhere(this.workflows, { id: driver.workflow_id });
@@ -25,6 +26,19 @@ var ConfigsCtrl = function($http, initialData) {
 
   this.resetNewWorkflow = function() {
     this.newWorkflow = {};
+  };
+
+  this.addNewQuestion = function() {
+    $http.post("/configs/add_new_question", this.newQuestion).then(_.bind(onSuccess, this));
+
+    function onSuccess(xhr) {
+      this.questions.push(xhr.data);
+      this.resetNewQuestion();
+    }
+  };
+
+  this.resetNewQuestion = function() {
+    this.newQuestion = {};
   };
 };
 

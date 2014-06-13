@@ -31,10 +31,23 @@
     <tr>
       <th>Code</th>
       <th>Title</th>
+      <th></th>
     </tr>
     <tr ng-repeat="question in ctrl.questions">
       <td>{{question.code}}</td>
       <td>{{question.title}}</td>
+    </tr>
+
+    <tr>
+      <td>
+        <input ng-model="ctrl.newQuestion.code"></input>
+      </td>
+      <td>
+        <input ng-model="ctrl.newQuestion.title"></input>
+      </td>
+      <td>
+        <button ng-click="ctrl.addNewQuestion()">Add new question</button>
+      </td>
     </tr>
   </table>
 
