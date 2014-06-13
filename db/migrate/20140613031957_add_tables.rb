@@ -2,6 +2,7 @@ class AddTables < ActiveRecord::Migration
   def up
     create_table :workflows do |t|
       t.timestamps
+      t.text :code
       t.text :description
     end
 
@@ -28,5 +29,9 @@ class AddTables < ActiveRecord::Migration
   end
 
   def down
+    drop_table :setting_drivers
+    drop_table :workflow_drivers
+    drop_table :questions
+    drop_table :workflows
   end
 end
