@@ -10,7 +10,7 @@
           <td>{{question.code}}</td>
           <td>{{question.title}}</td>
           <td><select ng-model="question.answer"><option value='Y'>Y</option><option value='N'>N</option></select>
-          <td><input type='hidden' name="question_data[{{question.code}}]" value={{question.answer}}></input></td>
+          <td><input type='hidden' name="answer_data[{{question.code}}]" value={{question.answer}}></input></td>
         </tr>
       </table>
       <button type="submit">Generate document</button>
