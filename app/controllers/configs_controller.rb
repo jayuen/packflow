@@ -40,7 +40,7 @@ class ConfigsController < ApplicationController
   end
 
   def add_new_setting_driver
-    new_setting_driver = SettingDriver.create! params.permit(:setting, :setting_type, :question_id, :answer)
+    new_setting_driver = SettingDriver.create! params.permit(:setting, :setting_type, :setting_value, :question_id, :answer)
     render json: new_setting_driver 
   end
 

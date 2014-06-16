@@ -103,13 +103,15 @@
     <tr>
       <th>Setting</th>
       <th>Setting type</th>
+      <th>Setting value</th>
       <th>Question</th>
       <th>Answer</th>
       <th></th>
     </tr>
     <tr ng-repeat="settingDriver in ctrl.settingDrivers">
       <td>{{settingDriver.setting}}</td>
-      <td>{{settingDriver.type}}</td>
+      <td>{{settingDriver.setting_type}}</td>
+      <td>{{settingDriver.setting_value}}</td>
       <td>{{ctrl.getQuestionFromDriver(settingDriver).title}}</td>
       <td>{{ctrl.getQuestionFromDriver(settingDriver).answer}}</td>
       <td>
@@ -122,10 +124,13 @@
         <input ng-model="ctrl.newSettingDriver.setting"></input>
       </td>
       <td>
-        <select ng-model="ctrl.newSettingDriver.answer">
+        <select ng-model="ctrl.newSettingDriver.setting_type">
           <option value="site">Site</option>
           <option value="account">Account</option>
         </select>
+      </td>
+      <td>
+        <input ng-model="ctrl.newSettingDriver.setting_value"></input>
       </td>
       <td>
         <select ng-model="ctrl.newSettingDriver.question_id"
