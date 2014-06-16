@@ -65,7 +65,7 @@ var ConfigsCtrl = function($http, initialData) {
   };
 
   this.addNewWorkflowDriver = function() {
-    $http.post("/configs/add_new_workflow_driver", this.workflowDriver).then(_.bind(onSuccess, this));
+    $http.post("/configs/add_new_workflow_driver", this.newWorkflowDriver).then(_.bind(onSuccess, this));
 
     function onSuccess(xhr) {
       this.workflowDrivers.push(xhr.data);
