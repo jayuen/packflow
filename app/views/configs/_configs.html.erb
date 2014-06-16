@@ -11,6 +11,8 @@
     <tr ng-repeat="workflow in ctrl.workflows">
       <td>{{workflow.code}}</td>
       <td>{{workflow.description}}</td>
+      <td>
+        <button ng-click="ctrl.removeWorkflow(workflow)">X</button>
     </tr>
 
     <tr>
@@ -36,6 +38,9 @@
     <tr ng-repeat="question in ctrl.questions">
       <td>{{question.code}}</td>
       <td>{{question.title}}</td>
+      <td>
+        <button ng-click="ctrl.removeQuestion(question)">X</button>
+      </td>
     </tr>
 
     <tr>
@@ -63,6 +68,9 @@
       <td>{{ctrl.getWorkflowFromDriver(workflowDriver).description}}</td>
       <td>{{ctrl.getQuestionFromDriver(workflowDriver).title}}</td>
       <td>{{workflowDriver.answer}}</td>
+      <td>
+        <button ng-click="ctrl.removeWorkflowDriver(workflowDriver)">X</button>
+      </td>
     </tr>
 
     <tr>
@@ -104,7 +112,9 @@
       <td>{{settingDriver.type}}</td>
       <td>{{ctrl.getQuestionFromDriver(settingDriver).title}}</td>
       <td>{{ctrl.getQuestionFromDriver(settingDriver).answer}}</td>
-      <td></td>
+      <td>
+        <button ng-click="ctrl.removeSettingDriver(settingDriver)">X</button>
+      </td>
     </tr>
 
     <tr>

@@ -4,9 +4,13 @@ Packflow::Application.routes.draw do
   resources :configs do
     collection do
       post :add_new_workflow
+      post :remove_workflow
       post :add_new_question
+      post :remove_question
       post :add_new_workflow_driver
+      post :remove_workflow_driver
       post :add_new_setting_driver
+      post :remove_setting_driver
     end
   end
 

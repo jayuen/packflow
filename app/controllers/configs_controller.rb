@@ -11,9 +11,21 @@ class ConfigsController < ApplicationController
     render json: new_workflow 
   end
 
+  def remove_workflow
+    workflow = Workflow.find_by_id params.permit(:id)[:id]
+    workflow.destroy
+    render nothing: true
+  end
+
   def add_new_question
     new_question = Question.create! params.permit(:code, :title)
     render json: new_question 
+  end
+
+  def remove_question
+    question = Question.find_by_id params.permit(:id)[:id]
+    question.destroy
+    render nothing: true
   end
 
   def add_new_workflow_driver
@@ -21,8 +33,20 @@ class ConfigsController < ApplicationController
     render json: new_workflow_driver 
   end
 
+  def remove_workflow_driver
+    driver = WorkflowDriver.find_by_id params.permit(:id)[:id]
+    driver.destroy
+    render nothing: true
+  end
+
   def add_new_setting_driver
     new_setting_driver = SettingDriver.create! params.permit(:setting, :setting_type, :question_id, :answer)
     render json: new_setting_driver 
+  end
+
+  def remove_setting_driver
+    driver = SettingDriver.find_by_id params.permit(:id)[:id]
+    driver.destroy
+    render nothing: true
   end
 end
