@@ -2,8 +2,6 @@ require 'pdfkit'
 
 class BuildController < ApplicationController
   def index
-    TestData.build
-
     questions = Question.all
 
     @data = {
