@@ -17,15 +17,15 @@ ActiveRecord::Schema.define(version: 20140613201107) do
   enable_extension "plpgsql"
 
   create_table "questions", force: true do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "title"
     t.text     "code"
   end
 
   create_table "setting_drivers", force: true do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "question_id"
     t.text     "answer"
     t.text     "setting"
@@ -34,16 +34,16 @@ ActiveRecord::Schema.define(version: 20140613201107) do
   end
 
   create_table "workflow_drivers", force: true do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "question_id"
     t.text     "answer"
     t.integer  "workflow_id"
   end
 
   create_table "workflows", force: true do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "code"
     t.text     "description"
   end
