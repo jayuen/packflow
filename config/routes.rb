@@ -15,7 +15,6 @@ Packflow::Application.routes.draw do
   end
 
   get 'build' => 'build#index'
-
   get 'build/generate_document' => 'build#generate_document'
   # The priority is based upon order of creation:
   # first created -> highest priority.
